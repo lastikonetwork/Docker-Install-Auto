@@ -2,13 +2,13 @@
 
 # Cek 64-bit dan Debian 11 atau Debian 12
 if [ "$(uname -m)" != "x86_64" ] || ! (grep -q 'Debian GNU/Linux 11' /etc/os-release || grep -q 'Debian GNU/Linux 12' /etc/os-release); then
-    echo "Script ini hanya bisa dijalankan pada Linux Debian 11 atau Debian 12 64-bit."
+    echo "Using Only On Linux Ubuntu 64-bit."
     exit 1
 fi
 
 # Cek root
 if [ "$(id -u)" -ne 0 ]; then
-    echo "Script ini harus dijalankan sebagai root."
+    echo "Running on root."
     exit 1
 fi
 
@@ -37,11 +37,11 @@ fi
 usermod -aG docker $USER
 
 # Informasikan kepada pengguna untuk logout dan login kembali agar perubahan grup berlaku
-echo "Untuk menggunakan Docker, silakan log out dan log in kembali."
+echo "For using the docker please logout then login again."
 
 # Aktifkan auto start Docker
 systemctl enable docker.service
 systemctl enable containerd.service
 
 # Pesan penutup
-echo "Penginstalan Docker sudah selesai."
+echo "Docker Install Successfully."
