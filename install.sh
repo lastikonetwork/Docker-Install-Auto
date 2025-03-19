@@ -8,7 +8,7 @@ fi
 
 # Check root
 if [ "$(id -u)" -ne 0 ]; then
-    echo "Script ini harus dijalankan sebagai root."
+    echo "Running on root."
     exit 1
 fi
 
@@ -37,11 +37,11 @@ fi
 usermod -aG docker $USER
 
 # Inform the user to log out and log back in for group changes to take effect
-echo "Untuk menggunakan Docker, silakan log out dan log in kembali."
+echo "For using the docker please logout then login again"
 
 # Enable auto start Docker
 systemctl enable docker.service
 systemctl enable containerd.service
 
 # Close message
-echo "Penginstalan Docker sudah selesai."
+echo "Docker Install Successfully"
