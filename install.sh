@@ -37,11 +37,11 @@ fi
 usermod -aG docker $USER
 
 # Inform the user to log out and log back in for group changes to take effect
-echo "For using the docker please logout then login again"
+echo "For using the docker please logout then login again."
 
 # Enable auto start Docker
 systemctl enable docker.service
 systemctl enable containerd.service
 
 # Close message
-echo "Docker Install Successfully"
+echo "Docker Install Successfully."
