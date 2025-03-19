@@ -2,7 +2,7 @@
 
 # Check 64-bit and Ubuntu
 if [ "$(uname -m)" != "x86_64" ] || ! grep -q 'Ubuntu' /etc/os-release; then
-    echo "Script ini hanya bisa dijalankan pada Linux Ubuntu 64-bit."
+    echo "Using Only On Linux Ubuntu 64-bit."
     exit 1
 fi
 
